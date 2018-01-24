@@ -13,13 +13,18 @@ We can use it build http server at local.
 But can we just use web support components? The answer is yes. 
 
 Core: mscoree.dll
+
 Assemblys:C:\WINDOWS\Microsoft.NET 
+
 Registry:SOFTWARE\Microsoft\.NETFramework\
+
 
 I support the package scripts of Inno setup to build exe file.
 
 please see my blog for details
+
 setep one
 http://www.cnblogs.com/micro-chen/p/6394593.html
+
 setep two
 http://www.cnblogs.com/micro-chen/p/6400447.html
