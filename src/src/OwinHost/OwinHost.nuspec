@@ -1,0 +1,27 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <authors>$authors$</authors>
+    <owners>$authors$</owners>
+    <licenseUrl>$licenseUrl$</licenseUrl>
+    <projectUrl>$projectUrl$</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <title>$title$</title>
+    <description>Provides a stand-alone executable (OwinHost.exe) which can be used to host an OWIN-based application.</description>
+    <tags>$tags$</tags>
+    <frameworkAssemblies>
+      <!--Workaround so the package will get added per project rather than per solution.-->
+      <frameworkAssembly assemblyName="System"  />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="Package\**" />
+    <file src="OwinHost.exe" target="tools" />
+    <file src="Owin.dll" target="tools" />
+    <file src="..\Microsoft.Owin.Net45\Microsoft.Owin.dll" target="tools" />
+    <file src="..\Microsoft.Owin.Hosting.Net45\Microsoft.Owin.Hosting.dll" target="tools" />
+    <file src="..\Microsoft.Owin.Host.HttpListener.Net45\Microsoft.Owin.Host.HttpListener.dll" target="tools" />
+  </files>
+</package>

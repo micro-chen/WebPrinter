@@ -1,0 +1,235 @@
+﻿
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+
+body {
+    font-size: 12px;
+    font-family: simsun,arial,helvetica,clean,sans-serif;
+    background: #fff;
+    color: #2b2b2b;
+}
+
+table {
+    font-size: inherit;
+    font: 100%;
+}
+
+
+h1 {
+    font-size: 14px;
+}
+
+h2 {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 12px;
+}
+
+h4 {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+strong {
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+
+    a:link {
+        color: #004276;
+    }
+
+    a:visited {
+        color: #004276;
+    }
+
+    a:hover {
+        color: #ba2636;
+    }
+
+    a:active {
+        color: #004276;
+    }
+
+
+.clear {
+    clear: both;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+
+* + html .clearfix {
+    min-height: 1%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.f14 {
+    font-size: 14px;
+}
+
+.h20 {
+    line-height: 20px;
+}
+
+.error {
+    color: red;
+}
+
+
+.cWhite, .cWhite a:link, .cWhite a:visited, .cWhite a:hover {
+    color: #fff;
+}
+
+.cRed, .cRed a:link, .cRed a:visited, .cRed a:hover {
+    color: #ba2636;
+}
+
+.cGray, .cGray a:link, .cGray a:visited {
+    color: #666;
+}
+
+    .cGray a:hover {
+        color: #ba2636;
+    }
+
+.cGray2, .cGray2 a:link, .cGray2 a:visited {
+    color: #999;
+}
+
+    .cGray2 a:hover {
+        color: #ba2636;
+    }
+
+.cDGray, .cDGray a:link, .cDGray a:visited {
+    color: #2b2b2b;
+}
+
+    .cDGray a:hover {
+        color: #ba2636;
+    }
+
+.cNavy, .cNavy a:link, .cNavy a:visited {
+    color: #004276;
+}
+
+    .cNavy a:hover {
+        color: #ba2636;
+    }
+
+
+.m_red, a.m_red:link, a.m_red:visited, a.m_red:hover {
+    color: #ba2636;
+}
+
+.m_black, a.m_black:link, a.m_black:visited, a.m_black:hover {
+    color: #000;
+}
+
+.m_bold {
+    font-weight: bold;
+}
+
+
+
+.col01 {
+    width: 1000px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+
+.tips404 {
+    background: url('../images/404.png') no-repeat 170px 45px;
+    padding: 45px 0 0 510px;
+    height: 502px;
+}
+
+    .tips404 h1 {
+        font: normal 26px/26px Microsoft Yahei;
+        color: #4c4c4c;
+        padding-bottom: 8px;
+    }
+
+        .tips404 h1 span {
+            font: normal 16px/24px Arial, Helvetica, sans-serif;
+            color: #aaa;
+        }
+
+    .tips404 li {
+        font: normal 14px/24px simsun;
+        color: #aaa;
+        padding-left: 60px;
+    }
+
+
+
+    .tips404 h3 {
+        font: normal 14px/24px simsun;
+        color: #c5c5c5;
+            padding-left: 60px;
+    }
+
+        .tips404 h3 span {
+            background: url('../images/icon-goback.gif') no-repeat 0 -26px;
+            padding-left: 18px;
+        }
+
+
+

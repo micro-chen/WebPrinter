@@ -1,0 +1,9 @@
+﻿--------签名--------
+makecert -n "CN=SmartPrint,O=SmartPrint,E=1021776019@qq.com" -r -sv SmartPrint.pvk SmartPrint.cer
+
+SmartPrint is Cross all Windows XP+ and Web Browsers.
+
+
+http://www.cnblogs.com/babyt/archive/2005/03/14/118309.html
+
+http://www.jizhuomi.com/software/349.html

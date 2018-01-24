@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C225EB2E-E7A7-463F-B058-1705F204978E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Owin.Hosting</RootNamespace>
+    <AssemblyName>Microsoft.Owin.Hosting</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <PackagesDir Condition="$(PackagesDir) == '' And '$(OS)' == 'Windows_NT'">$([System.IO.Path]::Combine($(ProjectDir), "..\..\packages"))</PackagesDir>
+    <PackagesDir Condition="$(PackagesDir) == '' And '$(OS)' != 'Windows_NT'">$(ProjectDir)..\..\packages</PackagesDir>
+    <RestorePackages>true</RestorePackages>
+    <StyleCopEnabled Condition=" '$(StyleCopEnabled)' == '' ">true</StyleCopEnabled>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <BaseIntermediateOutputPath>obj\net40\</BaseIntermediateOutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;NET40</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>
+    </DocumentationFile>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <BaseIntermediateOutputPath>obj\net40\</BaseIntermediateOutputPath>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NET40</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\build\AssemblyMetadataAttribute.cs">
+      <Link>Properties\AssemblyMetadataAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\..\build\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\Owin.Loader\Constants.cs">
+      <Link>App_Packages\Owin.Loader\Constants.cs</Link>
+    </Compile>
+    <Compile Include="..\Owin.Loader\DefaultLoader.cs">
+      <Link>App_Packages\Owin.Loader\DefaultLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\Owin.Loader\NullLoader.cs">
+      <Link>App_Packages\Owin.Loader\NullLoader.cs</Link>
+    </Compile>
+    <Compile Include="App_Packages\Owin.Loader\LoaderResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoaderResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Constants.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="ServerFactory\ServerFactoryActivator.cs" />
+    <Compile Include="ServerFactory\ServerFactoryLoader.cs" />
+    <Compile Include="ServerFactory\IServerFactoryAdapter.cs" />
+    <Compile Include="ServerFactory\IServerFactoryActivator.cs" />
+    <Compile Include="ServerFactory\IServerFactoryLoader.cs" />
+    <Compile Include="Loader\AppLoader.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerFactory\ServerFactoryAdapter.cs" />
+    <Compile Include="Services\ActivatorUtilities.cs" />
+    <Compile Include="Builder\AppActivator.cs" />
+    <Compile Include="Builder\AppBuilderFactory.cs" />
+    <Compile Include="Loader\AppLoaderFactory.cs" />
+    <Compile Include="Services\ServicesFactory.cs" />
+    <Compile Include="Tracing\DualWriter.cs" />
+    <Compile Include="Tracing\DualWriter.net45.cs" />
+    <Compile Include="Utilities\SettingsLoader.cs" />
+    <Compile Include="Services\ServiceProviderExtensions.cs" />
+    <Compile Include="Services\ServiceProvider.cs" />
+    <Compile Include="Builder\IAppActivator.cs" />
+    <Compile Include="Builder\IAppBuilderFactory.cs" />
+    <Compile Include="Loader\IAppLoaderFactory.cs" />
+    <Compile Include="Loader\IAppLoader.cs" />
+    <Compile Include="Tracing\TraceOutputFactory.cs" />
+    <Compile Include="Tracing\ITraceOutputFactory.cs" />
+    <Compile Include="Starter\HostingStarterActivator.cs" />
+    <Compile Include="Starter\DirectHostingStarter.cs" />
+    <Compile Include="Starter\DomainHostingStarterAgent.cs" />
+    <Compile Include="Starter\DomainHostingStarter.cs" />
+    <Compile Include="Starter\HostingStarterAttribute.cs" />
+    <Compile Include="Starter\IHostingStarter.cs" />
+    <Compile Include="Starter\IHostingStarterActivator.cs" />
+    <Compile Include="Starter\IHostingStarterFactory.cs" />
+    <Compile Include="Starter\HostingStarterFactory.cs" />
+    <Compile Include="WebApp.cs" />
+    <Compile Include="StartOptions.cs" />
+    <Compile Include="Engine\IHostingEngine.cs" />
+    <Compile Include="Starter\HostingStarter.cs" />
+    <Compile Include="Utilities\Disposable.cs" />
+    <Compile Include="Engine\HostingEngine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Engine\StartContext.cs" />
+    <Compile Include="Utilities\Encapsulate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>C:\Program Files\Mono\lib\mono\4.0\System.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Microsoft.Owin.Hosting.nuspec" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_Packages\Owin.Loader\LoaderResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LoaderResources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>SharedResourceNamespace</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.Owin\Microsoft.Owin.Net40.csproj">
+      <Project>{0db69cad-b0bc-4688-9467-66b4c1023d3f}</Project>
+      <Name>Microsoft.Owin.Net40</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(ProjectDir)..\..\build\Common.targets" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

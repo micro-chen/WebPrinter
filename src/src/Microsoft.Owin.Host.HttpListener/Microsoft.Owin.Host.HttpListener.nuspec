@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <authors>$authors$</authors>
+    <owners>$authors$</owners>
+    <licenseUrl>$licenseUrl$</licenseUrl>
+    <projectUrl>$projectUrl$</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <title>$title$</title>
+    <description>OWIN server built on the .NET Framework's HttpListener class. Currently the default server used for self-hosting.</description>
+    <tags>$tags$</tags>
+  </metadata>
+  <files>
+    <file src="..\Microsoft.Owin.Host.HttpListener.Net40\Microsoft.Owin.Host.HttpListener.dll" target="lib\net40" />
+    <file src="..\Microsoft.Owin.Host.HttpListener.Net40\Microsoft.Owin.Host.HttpListener.xml" target="lib\net40" />
+    <file src="..\Microsoft.Owin.Host.HttpListener.Net40\Microsoft.Owin.Host.HttpListener.pdb" target="lib\net40" />
+    <file src="..\Microsoft.Owin.Host.HttpListener.Net45\Microsoft.Owin.Host.HttpListener.dll" target="lib\net45" />
+    <file src="..\Microsoft.Owin.Host.HttpListener.Net45\Microsoft.Owin.Host.HttpListener.xml" target="lib\net45" />
+    <file src="..\Microsoft.Owin.Host.HttpListener.Net45\Microsoft.Owin.Host.HttpListener.pdb" target="lib\net45" />
+    <file src="src\**" target="src" />
+  </files>
+</package>

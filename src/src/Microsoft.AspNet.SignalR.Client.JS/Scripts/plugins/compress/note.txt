@@ -1,0 +1,70 @@
+﻿http://pieroxy.net/blog/pages/lz-string/index.html
+
+How does it work
+Very simple.
+
+First, download the file lz-string.js from the GitHub repository.
+Second, import it in the page where you want to use it:
+<script language="javascript" src="lz-string.js"></script>
+At last, call compress and decompress on the LZString object:
+var string = "This is my compression test.";
+alert("Size of sample is: " + string.length);
+var compressed = LZString.compress(string);
+alert("Size of compressed sample is: " + compressed.length);
+string = LZString.decompress(compressed);
+alert("Sample is: " + string);
+For more details/options, see the user guide.
+Browser support & Stability
+No extensive and exhaustive testing has been done, but only basic JavaScript types are used and nothing too fancy either. So it should work on pretty much any JavaScript engine. It has been tested on IE6 and up, Chrome, Firefox, Opera (pre and post blink), Safari, iOS and the default browser on Android along with Chrome and Firefox. For desktop Chrome, Firefox and Safari, it was originally tested on all current versions (as of may 2013) and it's been working until then.
+Of course, if you use the compressToUint8Array, you need an engine that support unit8arrays and the list of engine is thus greatly reduced. You can find the compatible browsers on caniuse.com.
+
+It also works on node.js.
+
+As far as stability goes, extensive testing has been done on this program, on an iPhone, Desktop Chrome, Desktop Firefox and Android's browser. So far, so good. Additionally, it would look as if quite aplenty of other people are using it, so I assume it works for them as well. In fact, the one time where I introduced a new functionality that was bugy in the library (I'm more careful now, and unit tests were added since then) it was spotted very quickly. I take this as a good sign that this library is widely in use, and hence, that it is stable.
+
+Performance
+For performace comparison, I use LZMA level 1 as a comparison point.
+
+For strings smaller than 750 characters, this program is 10x faster than LZMA level 1. It produces smaller output.
+For strings smaller than 100 000 characters, this program is 10x faster than LZMA level 1. It produces bigger output.
+For strings bigger than 750 000 characters, this program is slower than LZMA level 1. It produces bigger output.
+Come and have a look for yourself at the demo. Also another page for developers: Performance experiments, which try to optimize the whole things to hunt for CPU cycles. Already some results.
+
+What can I do with the output produced from this library?
+Well, this lib produces stuff that isn't really a string. By using all 16 bits of the UTF-16 bitspace, those strings aren't exactly valid UTF-16. By version 1.3.0, I added two helper encoders to produce stuff that we can do something with:
+
+compress produces invalid UTF-16 strings. Those can be stored in localStorage only on webkit browsers (Tested on Android, Chrome, Safari). Can be decompressed with decompress
+compressToUTF16 produces "valid" UTF-16 strings in the sense that all browsers can store them safely. So they can be stored in localStorage on all browsers tested (IE9-10, Firefox, Android, Chrome, Safari). Can be decompressed with decompressFromUTF16. This works by using only 15bits of storage per character. The strings produced are therefore 6.66% bigger than those produced by compress
+compressToBase64 produces ASCII UTF-16 strings representing the original string encoded in Base64. Can be decompressed with decompressFromBase64. This works by using only 6bits of storage per character. The strings produced are therefore 166% bigger than those produced by compress. It can still reduce significantly some JSON compressed objects.
+compressToEncodedURIComponent produces ASCII strings representing the original string encoded in Base64 with a few tweaks to make these URI safe. Hence, you can send them to the server without thinking about URL encoding them. This saves bandwidth and CPU. These strings can be decompressed with decompressFromEncodedURIComponent. See the bullet point above for considerations about size.
+compressToUint8Array produces an uint8Array. Can be decompressed with decompressFromUint8Array. Works starting with version 1.3.4.
+Only JavaScript? Porting to other languages
+LZ-String was originally meant for localStorage so it works only in JavaScript. Others have ported the algorithm to other languages:
+
+Diogo Duailibe did an implementation in Java:
+https://github.com/diogoduailibe/lzstring4j
+Another implementation in Java, with base64 support and better performances by rufushuang
+https://github.com/rufushuang/lz-string4java
+Jawa-the-Hutt did an implementation in C#:
+https://github.com/jawa-the-hutt/lz-string-csharp
+kreudom did another implementation in C#, more up to date:
+https://github.com/kreudom/lz-string-csharp
+nullpunkt released a php version:
+https://github.com/nullpunkt/lz-string-php
+eduardtomasek did an implementation in python 3:
+https://github.com/eduardtomasek/lz-string-python
+I helped a friend to write a Go implementation of the decompression algorithm:
+https://github.com/pieroxy/lz-string-go
+Here is an Elixir version, by Michael Shapiro:
+https://github.com/koudelka/elixir-lz-string
+Here is a C++/Qt version, by AmiArt:
+https://github.com/AmiArt/qt-lzstring
+If you want to port the library to another language, here are some tips:
+
+Port the compress and/or decompress methods from the version 1.0.2. All versions are binary-compatible and further versions just incorporate ugly optimizations for JavaScript, so you shouldn't bother. The version 1.0.2 can be found in the reference directory of the GitHub repo
+Port the (de)compressToBase64 and/or (de)compressToBaseUTF16 from the latest version depending on your needs.
+Be aware that compress and decompress work on invalit UTF characters in conjunction with (de)compressToBase64 and/or (de)compressToBaseUTF16. You may want to transfer stuff from byte arrays instead.
+To test/debug your implementation, just start with simple strings like "ABC". If the results of the compression (or decompression) aren't the same as the JS version, just go step by step in the JS version and then step by step into yours. Spotting problems should be really easy and straightforward. Repeat with strings slightly more complex and with repeating patterns: "ABCABC", "AAAA", etc.
+Post a message on the blog so I can link to your implementation.
+Feedback
+To get in touch, the simplest is to leave me a comment on the blog. For issues, you may go to the GitHub project.

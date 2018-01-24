@@ -1,0 +1,57 @@
+﻿@using System
+@using System.Linq
+@using System.Security.Claims
+@using System.Web
+@using Microsoft.Owin.Security
+@{
+    var authentication = Context.GetOwinContext().Authentication;
+    if (Request.HttpMethod == "POST")
+    {
+        var isPersistent = !string.IsNullOrEmpty(Request.Form.Get("isPersistent"));
+
+        if (!string.IsNullOrEmpty(Request.Form.Get("submit.Signin")))
+        {
+            authentication.SignIn(
+                new AuthenticationProperties { IsPersistent = isPersistent },
+                new ClaimsIdentity(new[] { new Claim(ClaimsIdentity.DefaultNameClaimType, Request.Form["username"]) }, "Application"));
+
+            return;
+        }
+    }
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h1>Katana.Sandbox.WebServer</h1>
+    <form method="POST">
+        <h2>Forms Login</h2>
+        <ul>
+            <li>
+                <label for="username">User name: </label>
+                <input type="text" id="username" name="username" /></li>
+            <li>
+                <label for="password">Password: </label>
+                <input type="password" id="password" name="password" /></li>
+            <li>
+                <input type="checkbox" id="isPersistent" name="isPersistent" checked="checked" />
+                <label for="isPersistent">Remember Me</label>
+                <input type="submit" name="submit.Signin" value="Sign In" />
+            </li>
+        </ul>
+    </form>
+    <form method="POST" action="External?@Request.QueryString">
+        <h2>Third Party Login</h2>
+        <ul>
+            @foreach (var description in authentication.GetAuthenticationTypes().Where(d => !String.IsNullOrEmpty(d.Caption)))
+            {
+                <li>
+                    <input type="submit" name="submit.External.@description.AuthenticationType" value="@description.Caption" /></li>
+            }
+        </ul>
+    </form>
+</body>
+</html>

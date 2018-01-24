@@ -1,0 +1,65 @@
+﻿@using System.Security.Claims
+@using System.Web
+@{
+    if (Response.StatusCode != 200)
+    {
+        Write(RenderPage("AuthorizeError.cshtml"));
+        return;
+    }
+
+    var authentication = Context.GetOwinContext().Authentication;
+    var ticket = authentication.AuthenticateAsync("Application").Result;
+    var identity = ticket != null ? ticket.Identity : null;
+    if (identity == null)
+    {
+        authentication.Challenge("Application");
+        return;
+    }
+
+    var scopes = (Request.QueryString.Get("scope") ?? "").Split(' ');
+
+    if (Request.HttpMethod == "POST")
+    {
+        if (!string.IsNullOrEmpty(Request.Form.Get("submit.Grant")))
+        {
+            identity = new ClaimsIdentity(identity.Claims, "Bearer", identity.NameClaimType, identity.RoleClaimType);
+            foreach (var scope in scopes)
+            {
+                identity.AddClaim(new Claim("urn:oauth:scope", scope));
+            }
+            authentication.SignIn(identity);
+            return;
+        }
+        if (!string.IsNullOrEmpty(Request.Form.Get("submit.Login")))
+        {
+            authentication.SignOut("Application");
+            authentication.Challenge("Application");
+            return;
+        }
+    }
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Authorize</title>
+</head>
+<body>
+    <h1>Katana.Sandbox.WebServer</h1>
+    <h2>OAuth2 Authorize</h2>
+    <form method="POST">
+        <p>Hello, @identity.Name</p>
+        <p>A third party application want to do the following on your behalf:</p>
+        <ul>
+            @foreach (var scope in scopes)
+            {
+                <li>@scope</li>
+            }
+        </ul>
+        <p>
+            <input type="submit" name="submit.Grant" value="Grant" />
+            <input type="submit" name="submit.Login" value="Sign in as different user" />
+        </p>
+    </form>
+</body>
+</html>
+

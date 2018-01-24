@@ -1,0 +1,63 @@
+// Copyright (c) Microsoft Open Technologies, Inc. All rights reserved. See License.txt in the project root for license information.
+
+#if !NET40
+
+using System;
+using System.Security.Claims;
+using System.Security.Principal;
+
+namespace Microsoft.Owin.Security
+{
+    /// <summary>
+    /// Acts as the return value from calls to the IAuthenticationManager's AuthenticeAsync methods.
+    /// </summary>
+    public class AuthenticateResult
+    {
+        /// <summary>
+        /// Create an instance of the result object
+        /// </summary>
+        /// <param name="identity">Assigned to Identity. May be null.</param>
+        /// <param name="properties">Assigned to Properties. Contains extra information carried along with the identity.</param>
+        /// <param name="description">Assigned to Description. Contains information describing the authentication provider.</param>
+        public AuthenticateResult(IIdentity identity, AuthenticationProperties properties, AuthenticationDescription description)
+        {
+            if (properties == null)
+            {
+                throw new ArgumentNullException("properties");
+            }
+            if (description == null)
+            {
+                throw new ArgumentNullException("description");
+            }
+            if (identity != null)
+            {
+                Identity = identity as ClaimsIdentity ?? new ClaimsIdentity(identity);
+            }
+            Properties = properties;
+            Description = description;
+        }
+
+        /// <summary>
+        /// Contains the claims that were authenticated by the given AuthenticationType. If the authentication
+        /// type was not successful the Identity property will be null.
+        /// </summary>
+        public ClaimsIdentity Identity { get; private set; }
+
+        /// <summary>
+        /// Contains extra values that were provided with the original SignIn call.
+        /// </summary>
+        public AuthenticationProperties Properties { get; private set; }
+
+        /// <summary>
+        /// Contains description properties for the middleware authentication type in general. Does not
+        /// vary per request.
+        /// </summary>
+        public AuthenticationDescription Description { get; private set; }
+    }
+}
+
+#else
+
+using ResharperCodeFormattingWorkaround = System.Object;
+
+#endif

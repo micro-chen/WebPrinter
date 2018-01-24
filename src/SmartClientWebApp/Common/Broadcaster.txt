@@ -1,0 +1,160 @@
+﻿using Microsoft.AspNet.SignalR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Web;
+using WebSocketSharp;
+
+namespace SmartClient.Web.Common
+{
+    /// <summary>
+    /// 消息类型
+    /// </summary>
+    public enum MessasgeType
+    {
+        Open,
+        Message,
+        Close,
+        Error
+
+    }
+    /// <summary>
+    /// 触发向客户端写入消息的容器
+    /// </summary>
+    public class MeesageToClient
+    {
+
+        public MeesageToClient(object _caller, MessasgeType _msgType, EventArgs _message)
+        {
+            //this.ClientConnectionId = _clientConnId;
+            this.Caller = _caller;
+            this.MsgType = _msgType;
+            this.Message = _message;
+        }
+
+        public dynamic Caller { get; set; }
+
+        /// <summary>
+        /// 客户端连接id
+        /// </summary>
+       // public string ClientConnectionId { get; set; }
+        /// <summary>
+        /// 消息类型
+        /// </summary>
+        public MessasgeType MsgType { get; set; }
+
+        /// <summary>
+        /// 消息体
+        /// </summary>
+        public EventArgs Message { get; set; }
+    }
+
+    public class Broadcaster<T> where T : Hub
+    {
+        private readonly static Lazy<Broadcaster<T>> _instance =
+            new Lazy<Broadcaster<T>>(() => new Broadcaster<T>());
+        // We're going to broadcast to all clients a maximum of 25 times per second
+        private readonly TimeSpan BroadcastInterval =
+            TimeSpan.FromMilliseconds(40);
+        private readonly IHubContext _hubContext;
+        private Timer _broadcastLoop;
+        //private ShapeModel _model;
+        //private bool _modelUpdated;
+
+        /// <summary>
+        /// 消息列表
+        /// </summary>
+        private Queue<MeesageToClient> _lstOfMessages = new Queue<MeesageToClient>();
+
+
+
+        public Broadcaster()
+        {
+            // Save our hub context so we can easily use it 
+            // to send to its connected clients
+            _hubContext = GlobalHost.ConnectionManager.GetHubContext<T>();
+
+            //_model = new ShapeModel();
+            //_modelUpdated = false;
+
+            // Start the broadcast loop
+            _broadcastLoop = new Timer(
+                BroadcastShape,
+                null,
+                BroadcastInterval,
+                BroadcastInterval);
+        }
+
+        public void BroadcastShape(object state)
+        {
+            // No need to send anything if our model hasn't changed
+            if (_lstOfMessages.Count > 0)
+            {
+                // This is how we can access the Clients property 
+                // in a static hub method or outside of the hub entirely
+                //_hubContext.Clients.AllExcept(_model.LastUpdatedBy).updateShape(_model);
+                //_modelUpdated = false;
+                while (_lstOfMessages.Count > 0)
+                {
+                    var item = _lstOfMessages.Dequeue();
+                    if (item == null)
+                    {
+                        continue;
+                    }
+
+                    switch (item.MsgType)
+                    {
+                        case MessasgeType.Open:
+                            //_hubContext.Clients.AllExcept(item.ClientConnectionId).onopen(item.Message);
+                            item.Caller.onopen(item.Message);
+                            break;
+                        case MessasgeType.Message:
+                            // _hubContext.Clients.AllExcept(item.ClientConnectionId).onmessage(item);
+                            item.Caller.onmessage(item.Message);
+                            break;
+                        case MessasgeType.Close:
+                            // _hubContext.Clients.AllExcept(item.ClientConnectionId).onclose(item.Message);
+                            item.Caller.onclose(item.Message);
+                            break;
+                        case MessasgeType.Error:
+                            //_hubContext.Clients.AllExcept(item.ClientConnectionId).onerror(item.Message);
+                            item.Caller.onerror(item.Message);
+                            break;
+                        default:
+                            break;
+                    }
+
+
+                }
+
+
+            }
+        }
+
+        /// <summary>
+        /// 添加到消息队列中
+        /// </summary>
+        /// <param name="clientModel"></param>
+        public void AddToMeeageQueue(MeesageToClient clientModel)
+        {
+            if (null != clientModel)
+            {
+                _lstOfMessages.Enqueue(clientModel);
+            }
+        }
+
+        /// <summary>
+        ///单列模式
+        /// </summary>
+        public static Broadcaster<T> Instance
+        {
+            get
+            {
+                return _instance.Value;
+            }
+        }
+    }
+
+
+}

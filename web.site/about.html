@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>智能打印SDK-关于我们</title>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="打印组件|打印组件支持IE6,7,8,9|智能打印SDK|菜鸟打印组件支持IE6,7,8,9|打印组件支持兼容模式|打印组件全浏览器支持" />
+    <meta name="description" content="智能打印SDK打印组件是一款兼容市场上全部PC浏览器的打印组件，本产品基于菜鸟打印组件，不限制WebSocket。HTTP本地通信，性能高卓越，灵活，兼容性好。" />
+    <!--自适应-->
+    <!-- <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <!--css-->
+    <link href="Content/style.css" rel="stylesheet" />
+    <!-- JAVASCRIPT -->
+
+    <script src="Scripts/jquery-2.1.1.min.js"></script>
+    <script src="Scripts/jquery.portamento.js"></script>
+    <script src="Scripts/jquery.scrollTo.js"></script>
+    <script src="Scripts/jquery.nav.min.js"></script>
+    <script src="Scripts/nav.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            /**
+             * 滚动固定
+             */
+            $('.about-menu').portamento({
+                gap: 0,
+                wrapper: $('.about-wrap')
+            });
+
+            $('#nav').onePageNav({
+                currentClass: 'on',
+                scrollThreshold: 0.25
+            });
+
+        });
+    </script>
+    <!--防止嵌入-->
+    <script type="text/javascript">
+        try {
+            top.location.hostname;
+            if (top.location.hostname != window.location.hostname) {
+                top.location.href = window.location.href;
+            }
+        }
+        catch (e) {
+            top.location.href = window.location.href;
+        }
+    </script>
+</head>
+<body youdao="bind">
+    <div class="all" id="move-top">
+        <!--头部-->
+        <div class="header" style="background: #045082;">
+            <!-- HEADER -->
+            <div class="container_12">
+                <div class="grid_3">
+                    <div class="logo">
+                        <!-- LOGO -->
+                        <h4 style="color: #ffffff">
+                            <img src="/images/logo.png" alt="logoico">&nbsp;智能打印SDK
+                        </h4>
+                    </div>
+                </div>
+                <!-- END LOGO -->
+                <div class="grid_9">
+                    <!-- MENU -->
+                    <ul class="sf-menu sf-js-enabled" id="sf-menu">
+                        <li class="header-title">
+                            <a href="/" style="opacity: 1;"><span class="uppercase" style="color: #ffffff">主&nbsp;&nbsp;&nbsp;&nbsp;页</span></a>
+                            <hr>
+                        </li>
+                        <li><span class="pipe">|</span></li>
+                        <li class="header-title">
+                            <a target="_blank" href="download.html" style="opacity: 1;" target="_self"><span class="uppercase" style="color: #ffffff">下载中心</span></a>
+                            <hr>
+                        </li>
+                        <li><span class="pipe">|</span></li>
+                        <li class="header-title">
+                            <a href="/help.html" style="opacity: 1;" target="_self"><span class="uppercase" style="color: #ffffff">帮助文档</span></a>
+                            <hr>
+                        </li>
+                        <li><span class="pipe">|</span></li>
+                        <li class="header-title">
+                            <a href="/about.html" style="opacity: 1;" target="_self"><span class="uppercase" style="color: #ffffff">关于我们</span></a>
+                            <hr>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END MENU -->
+            </div>
+        </div>
+        <div class="clearfix">
+            <div class="about-wrap">
+                <div id="portamento_container" style="min-height: 236px; width: 180px;">
+                    <div id="portamento_container">
+                        <ul id="nav" class="about-menu" style="top: 0px;">
+                            <li class="on"><a href="/about.html#section-1">关于我们</a></li>
+                            <!--   <li class=""><a href="/about.html#section-2">那些故事</a></li>-->
+                            <li class=""><a href="/about.html#section-3">免责声明</a></li>
+                            <li class=""><a href="/about.html#section-4">联系我们</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <div id="section-1" class="menu-wrap">
+                        <h2>关于我们</h2>
+                        <span><strong>【智能打印SDK】</strong><strong>作者：Micro-Chen</strong></span>
+                        <p>
+                            【智能打印SDK】组件，是以用户/开发者为中心，人性化的打印组件。不做广告、不携带病毒、不做推广、不谋取利益、
+                            保障用户/开发者信息安全，并接受各方技术评测，全心全意为用户打造一款性能高，兼容性好，通用性强的软件。
+                        </p>
+
+                    </div>
+
+                    <div id="section-3" class="menu-wrap">
+                        <h2>免责声明</h2>
+                        <h3>一.  免费原则</h3>
+                        <p>【智能打印SDK】的发布和使用均不收取任何费用。拒绝任何人或任何实体进行出售，严禁用于商业谋利用途；</p>
+                        <h3>二. 无害原则</h3>
+                        <p>任何人不得使用【智能打印SDK】进行违法行为，否则请自觉停止使用【智能打印SDK】；</p>
+                        <h3>三. 免责原则</h3>
+                        <p>【智能打印SDK】本身免费，没有借由任何渠道出售，不因与任何一方合作而获利。如果您擅自将【智能打印SDK】用于非法场合并且没有知悉作者，作者将不会承担任何因此导致的责任；</p>
+                        <h3>四. 无毒原则</h3>
+                        <p>作者保证所发布的扩展、【智能打印SDK】完全无害且不含有任何有害代码，但不对任何第三方篡改版本作出保证，请知悉</p>
+						<h3>五. 条款准则</h3>
+						<p>本产品仅限于SDK对Web层的调用，而不限于打印组件的核心。打印组件的核心归菜鸟打印组件所有。</p>
+                    </div>
+
+                    <div id="section-4" class="menu-wrap">
+                        <h2>联系我们</h2>
+                        <p>官方QQ群</p>
+                        <ul>
+                            <li>
+
+                                <p>
+                                    [1群]：547747202
+                                    <img src="images/offical_barcode.png" />
+                                </p>
+                            </li>
+
+                            <p>加群须知</p>
+                            <li>请选择空位置多的群，接近满人的群有可能已经满人，届时可能忽视或拒绝验证消息！</li>
+                            <li>所有群仅供交流，赞助用户在群内不享有特权。 </li>
+                        </ul>
+                        <div id="section-5">
+                            <p>联系作者</p>
+                            <ul>
+                                <li>昵称：Micro-Chen</li>
+                                <li>邮箱：<a href="JavaScript:void(0)">1021776019@qq.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--底部-->
+        <div id="footer">
+            <p>Copyright © 2016 - 2017 Micro-Chen. All Rights Reserved.</p>
+            <p>
+                分享技术，技术服务生产。
+            </p>
+        </div>
+
+
+    </div>
+</body>
+</html>

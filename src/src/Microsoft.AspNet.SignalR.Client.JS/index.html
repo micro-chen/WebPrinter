@@ -1,0 +1,467 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HTTP的连接到菜鸟打印组件-示范</title>
+    <meta charset="utf-8" />
+
+    <style type="text/css">
+        .container {
+            background-color: #99CCFF;
+            border: thick solid #669980;
+            padding: 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+	<p>提示：如果未安装【智能打印SDK】请先下载SDK安装！安装后，直接刷新（F5）本页面即可。&nbsp;&nbsp;&nbsp;<a target="_blank" href="/download.html">去下载</a></p>
+	<br />
+        <textarea id="message" style="height:200px;width:300px"></textarea>
+        <br />
+        <input type="button" id="btn_get_cainiao_status" value="菜鸟是否运行" />
+        <input type="button" id="btn_get_workbench_status" value="工作台是否运行" />
+        <input type="button" id="btn_start_workbench" value="启动工作台" />
+        <br />
+        <input type="button" id="btn_open_config" value="Show Config" />
+        <input type="button" id="btn_get_all_printers" value="Show Printers" />
+        <input type="button" id="btn_get_cainiao_install" value="本地菜鸟安装路径" />
+        <input type="button" id="btn_get_cainiao_extesion_verion" value="菜鸟扩展版本" />
+        <br />
+        
+        <input type="button" id="btn_start_cainiao" value="启动菜鸟" />
+        <input type="button" id="btn_restart_cainiao" value="重启菜鸟" />
+        <input type="button" id="btn_clsoe_cainiao" value="关闭菜鸟" />
+        <br />
+        <hr />
+        <input  type ="text" id="txt_printer_name"/>
+         <input type="button" id="btn_set_default_printer" value="设定默认打印机" />
+        <br />
+		<p>提示：去菜鸟示范模板中复制一份模板数据吧。&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://cloudprint-docs-resource.oss-cn-shanghai.aliyuncs.com/printTest.html" rel="nofollow">去复制</a></p>
+         <textarea id="printMessage" style="height:200px;width:300px"></textarea>
+           <input type="button" id="btn_printMessage" value="打印" />
+        <br />
+    </div>
+    <!--Script references. -->
+    <!--Reference the jQuery library. -->
+    <script src="Scripts/jquery-1.6.4.js"></script>
+    <!--使用json2.js进行js对象和字符串的转换，用来支持IE 6.7+-->
+    <script src="Scripts/json2.js"></script>
+    <!--Reference the SignalR library. -->
+    <script src="Scripts/jquery.signalR-1.2.2.js"></script>
+
+
+      <!--<script src="Scripts/applicationCore.js"></script>
+	 <script src="Scripts/printerHttpClient.js"></script>-->
+    <!--app support-->
+<script>
+var timestamp=new Date().getTime();
+var appCoreLibrary="Scripts/applicationCore.js?token="+timestamp;
+var printerLibrary="Scripts/printerHttpClient.js?token="+timestamp;
+
+
+document.write("<script src='" + appCoreLibrary + "'><\/script>");
+document.write("<script src='" + printerLibrary + "'><\/script>");
+
+</script>
+
+
+    <script>
+        $(function () {
+
+            var client = PrinterHttpClient.createNew();
+            var messageZone = $("#message");
+            var btnConfig = $("#btn_open_config");
+            var btnGetAllPrinters = $("#btn_get_all_printers");
+            var btnGetCaiNiao = $("#btn_get_cainiao_install");
+            var btnGetCaiNiaoExtensionVersion = $("#btn_get_cainiao_extesion_verion");
+            var btnGetCaiNiaoStatus = $("#btn_get_cainiao_status");
+            var btnRestartCainiao = $("#btn_restart_cainiao");
+            var btnCloseCainiao = $("#btn_clsoe_cainiao");
+            var btnStartCainiao = $("#btn_start_cainiao");
+
+            var btnGetWorkbenchStatus = $("#btn_get_workbench_status");
+            var btnStartWorkbench = $("#btn_start_workbench");
+
+            var txtPrinterName = $("#txt_printer_name");
+            var btnSetDefaultPrinter = $("#btn_set_default_printer");
+
+            var printMessageZone = $("#printMessage");
+            var btnPrintMessage = $("#btn_printMessage");
+
+            //获取工作台状态
+            btnGetWorkbenchStatus.click(function () {
+
+                var callBack = function (data) {
+                    if (isNullOrUndefined(data)) {
+                        alert("未能正确获取信息！");
+                        return;
+                    }
+
+                    if (data.Status == 1) {
+                        var msg = JSON.stringify(data.Data);
+                        messageZone.val(msg);
+                    } else {
+                        var msg = data.Message;
+                        messageZone.val(msg);
+                    }
+                }
+
+                PrinterHttpClient.getIsWorkBenchIsRunning(callBack);
+
+            });
+
+            //启动工作台
+            btnStartWorkbench.click(function () {
+
+                var callBack = function (data) {
+                    if (isNullOrUndefined(data)) {
+                        alert("未能正确获取信息！");
+                        return;
+                    }
+
+                    if (data.Status == 1) {
+                        var msg = JSON.stringify(data.Data);
+                        messageZone.val(msg);
+                    } else {
+                        var msg = data.Message;
+                        messageZone.val(msg);
+                    }
+                }
+
+                PrinterHttpClient.startWorkBench(callBack);
+
+            });
+
+
+
+            //打印配置
+            btnConfig.click(function () {
+
+                var request = {
+                    requestID: generateUUID(),
+                    version: "1.0",
+                    cmd: "printerConfig"
+                };
+
+                client.send(JSON.stringify(request));
+
+            });
+
+
+            btnGetAllPrinters.click(function () {
+
+                var request = {
+                    requestID: generateUUID(),
+                    version: '1.0',
+                    cmd: 'getPrinters'
+                };
+
+                client.send(JSON.stringify(request));
+
+
+
+            });
+
+            //获取菜鸟安装路径
+            btnGetCaiNiao.click(function () {
+
+                var callBack = function(data) {
+                    if (isNullOrUndefined(data)) {
+                        alert("未能正确获取信息！");
+                        return;
+                    }
+
+                    if (data.Status==1) {
+                        var msg =JSON.stringify( data.Data);
+                        messageZone.val(msg);
+                    } else {
+                        var msg = data.Message;
+                        messageZone.val(msg);
+                    }
+                }
+
+                PrinterHttpClient.getCaiNiaoInstallPath(callBack);
+
+            });
+
+            btnGetCaiNiaoExtensionVersion.click(function () {
+
+                var callBack = function(data) {
+                    if (isNullOrUndefined(data)) {
+                        alert("未能正确获取信息！");
+                        return;
+                    }
+
+                    if (data.Status==1) {
+                        var msg =JSON.stringify( data.Data);
+                        messageZone.val(msg);
+                    } else {
+                        var msg = data.Message;
+                        messageZone.val(msg);
+                    }
+                }
+
+                PrinterHttpClient.getCaiNiaoExtensionVersion(callBack);
+
+            });
+
+
+            btnGetCaiNiaoStatus.click(function () {
+
+                var callBack = function (data) {
+                    if (isNullOrUndefined(data)) {
+                        alert("未能正确获取信息！");
+                        return;
+                    }
+
+                    if (data.Status == 1) {
+                        var msg = JSON.stringify(data.Data);
+                        messageZone.val(msg);
+                    } else {
+                        var msg = data.Message;
+                        messageZone.val(msg);
+                    }
+                }
+
+                PrinterHttpClient.getCheckCaiNiaoPrinterStatus(callBack);
+
+            });
+
+
+            btnRestartCainiao.click(function () {
+
+                var callBack = function (data) {
+                    if (isNullOrUndefined(data)) {
+                        alert("未能正确获取信息！");
+                        return;
+                    }
+
+                    if (data.Status == 1) {
+                        var msg = JSON.stringify(data.Data);
+                        messageZone.val(msg);
+                    } else {
+                        var msg = data.Message;
+                        messageZone.val(msg);
+                    }
+                }
+
+             
+                PrinterHttpClient.restartCaiNiaoPrinter(callBack);
+
+            });
+
+            btnCloseCainiao.click(function () {
+
+                var callBack = function (data) {
+                    if (isNullOrUndefined(data)) {
+                        alert("未能正确获取信息！");
+                        return;
+                    }
+
+                    if (data.Status == 1) {
+                        var msg = JSON.stringify(data.Data);
+                        messageZone.val(msg);
+                    } else {
+                        var msg = data.Message;
+                        messageZone.val(msg);
+                    }
+                }
+
+
+                PrinterHttpClient.closeCaiNiaoPrinter(callBack);
+
+            });
+
+
+            
+            btnStartCainiao.click(function () {
+
+                var callBack = function (data) {
+                    if (isNullOrUndefined(data)) {
+                        alert("未能正确获取信息！");
+                        return;
+                    }
+
+                    if (data.Status == 1) {
+                        var msg = JSON.stringify(data.Data);
+                        messageZone.val(msg);
+                    } else {
+                        var msg = data.Message;
+                        messageZone.val(msg);
+                    }
+                }
+                PrinterHttpClient.startCaiNiaoPrinter(callBack);
+
+            });
+
+
+            btnSetDefaultPrinter.click(function () {
+
+                var callBack = function (data) {
+                    if (isNullOrUndefined(data)) {
+                        alert("未能正确获取信息！");
+                        return;
+                    }
+
+                    if (data.Status == 1) {
+                        var msg = JSON.stringify(data.Data);
+                        messageZone.val(msg);
+                    } else {
+                        var msg = data.Message;
+                        messageZone.val(msg);
+                    }
+                }
+                var printerName=txtPrinterName.val();
+                if (isNullOrEmpty(printerName)) {
+                    alert("打印机名称不能为空！");
+                    return;
+                }
+              
+
+                PrinterHttpClient.setDefaultPrinter(printerName, callBack);
+
+            });
+
+            btnPrintMessage.click(function () {
+
+                var callBack = function (data) {
+                    if (isNullOrUndefined(data)) {
+                        alert("未能正确获取信息！");
+                        return;
+                    }
+
+                    if (data.Status == 1) {
+                        var msg = JSON.stringify(data.Data);
+                        alert(msg);
+                        //messageZone.val(msg);
+                    } else {
+                        var msg = data.Message;
+                        alert(msg);
+                       // messageZone.val(msg);
+                    }
+                }
+                var msg = printMessageZone.val();
+                if (isNullOrEmpty(msg)) {
+                    alert("请输出打印的指令内容（从菜鸟文档中提取）");
+                    return;
+                }
+
+                var miniMsg = compressJsonStr(msg, 1);//压缩json字符串
+
+                var sb_Container = null;
+                if (SmartPrint.JsonpMode && miniMsg.length > 512) {//jsonP模式，对1K数据字符串进行字节压缩  
+
+                    sb_Container = LZString.compressToEncodedURIComponent(miniMsg);
+                    //发送完数据后的回调
+                    var callBackForSendCompleted = function (data) {
+                        if (!data || isNullOrEmpty(data.Data)) {
+                            throw "Server未能成功接收消息！";
+                            return;
+                        }
+                        var taskId = data.Data;
+                        client.sendTask(taskId);
+                    };
+                    PrinterHttpClient.sendTaskMessageToServer(sb_Container, callBackForSendCompleted);
+
+                } else {
+                    client.send(miniMsg);
+                }
+               
+
+            });
+			
+		/*示范模板*/
+			var  demoTemplateJsonObj = {
+			 cmd : "print",
+			 requestID : "12345678901234567890",
+			 version : "1.0",
+			 task : {
+				 taskID : '123456',
+				 preview : false,
+				 documents : [
+					{
+					   "documentID":"6666666666666",
+					   contents : [
+						   //电子面单部分
+						   {
+							   templateURL : "http://cloudprint.cainiao.com/cloudprint/template/getStandardTemplate.json?template_id=801",
+							   signature : "ALIBABACAINIAOWANGLUO",
+							   "data": {
+								 "recipient": {
+								   "address": {
+									 "city": "北京市",
+									 "detail": "花家地社区卫生服务站三层楼我也不知道是哪儿了",
+									 "district": "朝阳区",
+									 "province": "北京",
+									 "town": "望京街道"
+								   },
+								   "mobile": "1326443654",
+								   "name": "张三",
+								   "phone": "057123222"
+								 },
+								 "routingInfo": {
+								   "consolidation": {
+									 "name": "杭州",
+									 "code": "hangzhou"
+								   },
+								   "origin": {
+									 "code": "POSTB"
+								   },
+								   "sortation": {
+									 "name": "杭州"
+								   },
+								   "routeCode": "380D-56-04"
+								 },
+								 "sender": {
+								   "address": {
+									 "city": "北京市",
+									 "detail": "花家地社区卫生服务站二层楼我也不知道是哪儿了",
+									 "district": "朝阳区",
+									 "province": "北京",
+									 "town": "望京街道"
+								   },
+								   "mobile": "1326443654",
+								   "name": "张三",
+								   "phone": "057123222"
+								 },
+								 "shippingOption": {
+								   "code": "COD",
+								   "services": {
+									 "SVC-COD": {
+									   "value": "200"
+									 }
+								   },
+								   "title": "代收货款"
+								 },
+								 "waybillCode": "9890000160004"
+							   }
+								   //电子面单数据
+						   },
+						   //自定义区部分
+						   {
+							   templateURL : "http://cloudprint.cainiao.com/cloudprint/customArea/queryCustomAreaList4Top.json?custom_area_id=642230",
+							   data : {
+									"item_name":"我是你要的商品芭比娃娃。。。"
+							   }
+						  　}
+					   ]
+					}
+				 ]
+			 }
+		 };
+		 
+     printMessageZone.val(JSON.stringify(demoTemplateJsonObj));
+	 
+	 
+
+
+        })
+
+
+    </script>
+</body>
+</html>
