@@ -227,9 +227,13 @@ var PrinterHttpClient = {
 
             // Declare a proxy to reference the hub.
             proxyClient = $.connection.printerHub;
+	    if(isNullOrUndefined(proxyClient)|| isNullOrUndefined(proxyClient.client)){
+		alert('未能发现本地打印承载服务！请下载安装打印组件SDK！');
+		return;
+	    }
             // Create a function that the hub can call to broadcast messages.
             //设置客户端的套接字描述信息
-            proxyClient.client.setClientSocketDescription = function (status, protocol) {
+	    proxyClient.client.setClientSocketDescription = function (status, protocol) {
                 instance.readyState = status;
                 instance.protocol = protocol;
             }
