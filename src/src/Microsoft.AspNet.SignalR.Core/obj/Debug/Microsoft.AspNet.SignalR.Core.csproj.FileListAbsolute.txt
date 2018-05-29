@@ -1,0 +1,9 @@
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.AspNet.SignalR.Core\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.AspNet.SignalR.Core\bin\Debug\Microsoft.AspNet.SignalR.Core.pdb
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.AspNet.SignalR.Core\bin\Debug\Newtonsoft.Json.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.AspNet.SignalR.Core\bin\Debug\Newtonsoft.Json.xml
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.AspNet.SignalR.Core\obj\Debug\Microsoft.AspNet.SignalR.Core.csprojResolveAssemblyReference.cache
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.AspNet.SignalR.Core\obj\Debug\Microsoft.AspNet.SignalR.Resources.resources
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.AspNet.SignalR.Core\obj\Debug\Microsoft.AspNet.SignalR.Core.csproj.GenerateResource.Cache
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.AspNet.SignalR.Core\obj\Debug\Microsoft.AspNet.SignalR.Core.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.AspNet.SignalR.Core\obj\Debug\Microsoft.AspNet.SignalR.Core.pdb

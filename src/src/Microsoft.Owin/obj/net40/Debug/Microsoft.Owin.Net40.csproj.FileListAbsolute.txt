@@ -1,0 +1,7 @@
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin\bin\Debug\Microsoft.Owin.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin\bin\Debug\Microsoft.Owin.pdb
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin\bin\Debug\Owin.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin\obj\net40\Debug\Microsoft.Owin.Resources.resources
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin\obj\net40\Debug\Microsoft.Owin.Net40.csproj.GenerateResource.Cache
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin\obj\net40\Debug\Microsoft.Owin.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin\obj\net40\Debug\Microsoft.Owin.pdb

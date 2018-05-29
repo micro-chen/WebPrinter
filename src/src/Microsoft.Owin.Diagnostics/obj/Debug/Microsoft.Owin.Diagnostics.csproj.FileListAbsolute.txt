@@ -1,0 +1,12 @@
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Diagnostics\bin\Debug\Microsoft.Owin.Diagnostics.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Diagnostics\bin\Debug\Microsoft.Owin.Diagnostics.pdb
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Diagnostics\bin\Debug\Microsoft.Owin.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Diagnostics\bin\Debug\Owin.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Diagnostics\bin\Debug\System.Web.Razor.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Diagnostics\bin\Debug\Microsoft.Owin.pdb
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Diagnostics\bin\Debug\System.Web.Razor.xml
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Diagnostics\obj\Debug\Microsoft.Owin.Diagnostics.csprojResolveAssemblyReference.cache
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Diagnostics\obj\Debug\Microsoft.Owin.Diagnostics.Resources.resources
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Diagnostics\obj\Debug\Microsoft.Owin.Diagnostics.csproj.GenerateResource.Cache
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Diagnostics\obj\Debug\Microsoft.Owin.Diagnostics.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Diagnostics\obj\Debug\Microsoft.Owin.Diagnostics.pdb

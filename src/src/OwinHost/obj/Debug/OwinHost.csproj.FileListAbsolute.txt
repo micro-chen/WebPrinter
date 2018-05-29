@@ -1,0 +1,13 @@
+D:\Linux\GitHub\WebPrinter\src\src\OwinHost\obj\Debug\OwinHost.Resources.resources
+D:\Linux\GitHub\WebPrinter\src\src\OwinHost\obj\Debug\OwinHost.csproj.GenerateResource.Cache
+D:\Linux\GitHub\WebPrinter\src\src\OwinHost\bin\Debug\OwinHost.exe.config
+D:\Linux\GitHub\WebPrinter\src\src\OwinHost\bin\Debug\OwinHost.exe
+D:\Linux\GitHub\WebPrinter\src\src\OwinHost\bin\Debug\OwinHost.pdb
+D:\Linux\GitHub\WebPrinter\src\src\OwinHost\bin\Debug\Microsoft.Owin.Hosting.dll
+D:\Linux\GitHub\WebPrinter\src\src\OwinHost\bin\Debug\Owin.dll
+D:\Linux\GitHub\WebPrinter\src\src\OwinHost\bin\Debug\Microsoft.Owin.dll
+D:\Linux\GitHub\WebPrinter\src\src\OwinHost\bin\Debug\Microsoft.Owin.Hosting.pdb
+D:\Linux\GitHub\WebPrinter\src\src\OwinHost\bin\Debug\Microsoft.Owin.pdb
+D:\Linux\GitHub\WebPrinter\src\src\OwinHost\obj\Debug\OwinHost.csprojResolveAssemblyReference.cache
+D:\Linux\GitHub\WebPrinter\src\src\OwinHost\obj\Debug\OwinHost.exe
+D:\Linux\GitHub\WebPrinter\src\src\OwinHost\obj\Debug\OwinHost.pdb

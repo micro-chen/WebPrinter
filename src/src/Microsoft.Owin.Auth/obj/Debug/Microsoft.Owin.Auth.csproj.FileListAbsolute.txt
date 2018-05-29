@@ -1,0 +1,6 @@
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Auth\bin\Debug\Microsoft.Owin.Auth.XML
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Auth\bin\Debug\Microsoft.Owin.Auth.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Auth\bin\Debug\Microsoft.Owin.Auth.pdb
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Auth\bin\Debug\Owin.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Auth\obj\Debug\Microsoft.Owin.Auth.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Auth\obj\Debug\Microsoft.Owin.Auth.pdb

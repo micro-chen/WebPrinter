@@ -1,0 +1,11 @@
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Cors.Net40\obj\Debug\Microsoft.Owin.Cors.Net40.csprojResolveAssemblyReference.cache
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Cors.Net40\bin\Debug\Microsoft.Owin.Cors.dll.config
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Cors.Net40\bin\Debug\Microsoft.Owin.Cors.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Cors.Net40\bin\Debug\Microsoft.Owin.Cors.pdb
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Cors.Net40\bin\Debug\Microsoft.Owin.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Cors.Net40\bin\Debug\Owin.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Cors.Net40\bin\Debug\System.Web.Cors.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Cors.Net40\bin\Debug\Microsoft.Owin.pdb
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Cors.Net40\bin\Debug\System.Web.Cors.pdb
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Cors.Net40\obj\Debug\Microsoft.Owin.Cors.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Cors.Net40\obj\Debug\Microsoft.Owin.Cors.pdb

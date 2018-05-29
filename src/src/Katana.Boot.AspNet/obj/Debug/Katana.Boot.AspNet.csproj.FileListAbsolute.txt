@@ -1,0 +1,10 @@
+D:\Linux\GitHub\WebPrinter\src\src\Katana.Boot.AspNet\obj\Debug\Katana.Boot.AspNet.csprojResolveAssemblyReference.cache
+D:\Linux\GitHub\WebPrinter\src\src\Katana.Boot.AspNet\bin\Debug\Katana.Boot.AspNet.dll
+D:\Linux\GitHub\WebPrinter\src\src\Katana.Boot.AspNet\bin\Debug\Katana.Boot.AspNet.pdb
+D:\Linux\GitHub\WebPrinter\src\src\Katana.Boot.AspNet\bin\Debug\Microsoft.Owin.Hosting.dll
+D:\Linux\GitHub\WebPrinter\src\src\Katana.Boot.AspNet\bin\Debug\Owin.dll
+D:\Linux\GitHub\WebPrinter\src\src\Katana.Boot.AspNet\bin\Debug\Microsoft.Owin.dll
+D:\Linux\GitHub\WebPrinter\src\src\Katana.Boot.AspNet\bin\Debug\Microsoft.Owin.Hosting.pdb
+D:\Linux\GitHub\WebPrinter\src\src\Katana.Boot.AspNet\bin\Debug\Microsoft.Owin.pdb
+D:\Linux\GitHub\WebPrinter\src\src\Katana.Boot.AspNet\obj\Debug\Katana.Boot.AspNet.dll
+D:\Linux\GitHub\WebPrinter\src\src\Katana.Boot.AspNet\obj\Debug\Katana.Boot.AspNet.pdb

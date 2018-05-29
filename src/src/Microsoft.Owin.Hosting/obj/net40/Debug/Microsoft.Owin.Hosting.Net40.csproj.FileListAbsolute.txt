@@ -1,0 +1,11 @@
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Hosting\obj\net40\Debug\Microsoft.Owin.Hosting.Net40.csprojResolveAssemblyReference.cache
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Hosting\obj\net40\Debug\Microsoft.Owin.Hosting.App_Packages.Owin.Loader.LoaderResources.resources
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Hosting\obj\net40\Debug\Microsoft.Owin.Hosting.Resources.resources
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Hosting\obj\net40\Debug\Microsoft.Owin.Hosting.Net40.csproj.GenerateResource.Cache
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Hosting\bin\Debug\Microsoft.Owin.Hosting.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Hosting\bin\Debug\Microsoft.Owin.Hosting.pdb
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Hosting\bin\Debug\Microsoft.Owin.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Hosting\bin\Debug\Owin.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Hosting\bin\Debug\Microsoft.Owin.pdb
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Hosting\obj\net40\Debug\Microsoft.Owin.Hosting.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Hosting\obj\net40\Debug\Microsoft.Owin.Hosting.pdb

@@ -1,0 +1,8 @@
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Compression\bin\Debug\Microsoft.Owin.Compression.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Compression\bin\Debug\Microsoft.Owin.Compression.pdb
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Compression\bin\Debug\Microsoft.Owin.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Compression\bin\Debug\Owin.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Compression\bin\Debug\Microsoft.Owin.pdb
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Compression\obj\Debug\Microsoft.Owin.Compression.csprojResolveAssemblyReference.cache
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Compression\obj\Debug\Microsoft.Owin.Compression.dll
+D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Compression\obj\Debug\Microsoft.Owin.Compression.pdb
