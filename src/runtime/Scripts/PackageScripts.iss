@@ -177,6 +177,33 @@ begin
   end;
 end;
 
+
+function WebServerRuntimeUnInstall: Boolean;
+var
+  isExists:boolean;
+  token: String;
+begin
+  { check the webserver runtime  }
+     RegQueryStringValue(HKEY_LOCAL_MACHINE, 'SOFTWARE\Microsoft\.NETFramework\policy','need',token)
+  if token='2' then
+  begin
+    // Successfully read the value
+    //remove Registry
+       RegDeleteValue(HKEY_LOCAL_MACHINE, 'SOFTWARE\Microsoft\.NETFramework\policy', 'need');
+       RegDeleteKeyIncludingSubkeys(HKEY_LOCAL_MACHINE,'SOFTWARE\Microsoft\.NETFramework\policy\v4.0');
+
+       Result :=True
+  end;
+end;
+procedure CurUninstallStepChanged(step:TUninstallStep);
+begin
+ if step=usDone then
+  begin
+     WebServerRuntimeUnInstall();
+  end;
+end;
+
+
 procedure CompletedInstallWebServerRuntime();
 var
  token: String;
@@ -185,7 +212,7 @@ begin
    RegQueryStringValue(HKEY_LOCAL_MACHINE, 'SOFTWARE\Microsoft\.NETFramework\policy','need',token)
   if token='1' then
   begin
-     RegWriteStringValue(HKEY_LOCAL_MACHINE, 'SOFTWARE\Microsoft\.NETFramework\policy', 'need','0');
+     RegWriteStringValue(HKEY_LOCAL_MACHINE, 'SOFTWARE\Microsoft\.NETFramework\policy', 'need','2');
   end;
 end;
 
@@ -204,8 +231,7 @@ Filename: "{app}\7z.exe"; Parameters: "x webserver.bin -o{win}\Microsoft.NET\ -a
 Filename: "{app}\7z.exe";Parameters: "x appPackage.7z -o{app}\bin\app -aoa -y";StatusMsg: "Installing Application...";Flags:runhidden waituntilterminated;
 Filename: "{app}\7z.exe";Parameters: "x vc.7z -o{app}\bin\ -aoa";StatusMsg: "Installing Microsoft VC++ Runtime ...";Flags:runhidden waituntilterminated;
 Filename: "{app}\7z.exe";Parameters: "x CaiNiaoPackage.7z -o{app}\bin\CaiNiao -aoa";StatusMsg: "Installing CaiNiao Printer...";Flags:runhidden waituntilterminated;
-;Filename: "{app}\bin\hook.exe"; Parameters: "-remove"
-Filename: "{app}\bin\hook.exe"; Parameters: "-install";StatusMsg: "Start SmartPrint Service..."; Flags:runhidden shellexec waituntilterminated;;Filename: "{app}\CaiNiaoSetUp.exe";Description: "{cm:ComponentDescription}";Flags: postinstall  shellexec;AfterInstall:CompletedInstallWebServerRuntime() 
+Filename: "{app}\bin\hook.exe"; Parameters: "-install";StatusMsg: "Start SmartPrint Service..."; Flags:runhidden shellexec waituntilterminated;AfterInstall:CompletedInstallWebServerRuntime();Filename: "{app}\CaiNiaoSetUp.exe";Description: "{cm:ComponentDescription}";Flags: postinstall  shellexec;AfterInstall:CompletedInstallWebServerRuntime() 
 
 
 [UninstallRun]
