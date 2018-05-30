@@ -1,5 +1,0 @@
-D:\Linux\GitHub\WebPrinter\src\src\WebSocket\bin\Debug\WebSocketSharp.dll
-D:\Linux\GitHub\WebPrinter\src\src\WebSocket\bin\Debug\WebSocketSharp.pdb
-D:\Linux\GitHub\WebPrinter\src\src\WebSocket\obj\Debug\WebSocketSharp.csprojResolveAssemblyReference.cache
-D:\Linux\GitHub\WebPrinter\src\src\WebSocket\obj\Debug\WebSocketSharp.dll
-D:\Linux\GitHub\WebPrinter\src\src\WebSocket\obj\Debug\WebSocketSharp.pdb

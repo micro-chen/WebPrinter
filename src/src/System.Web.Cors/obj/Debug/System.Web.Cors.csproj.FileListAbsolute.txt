@@ -1,4 +1,0 @@
-D:\Linux\GitHub\WebPrinter\src\src\System.Web.Cors\bin\Debug\System.Web.Cors.dll
-D:\Linux\GitHub\WebPrinter\src\src\System.Web.Cors\bin\Debug\System.Web.Cors.pdb
-D:\Linux\GitHub\WebPrinter\src\src\System.Web.Cors\obj\Debug\System.Web.Cors.dll
-D:\Linux\GitHub\WebPrinter\src\src\System.Web.Cors\obj\Debug\System.Web.Cors.pdb

@@ -1,7 +1,0 @@
-D:\Linux\GitHub\WebPrinter\src\SmartClient.Common\bin\Debug\SmartClient.Common.dll
-D:\Linux\GitHub\WebPrinter\src\SmartClient.Common\bin\Debug\SmartClient.Common.pdb
-D:\Linux\GitHub\WebPrinter\src\SmartClient.Common\bin\Debug\SmartClient.Model.dll
-D:\Linux\GitHub\WebPrinter\src\SmartClient.Common\bin\Debug\SmartClient.Model.pdb
-D:\Linux\GitHub\WebPrinter\src\SmartClient.Common\obj\Debug\SmartClient.Common.csprojResolveAssemblyReference.cache
-D:\Linux\GitHub\WebPrinter\src\SmartClient.Common\obj\Debug\SmartClient.Common.dll
-D:\Linux\GitHub\WebPrinter\src\SmartClient.Common\obj\Debug\SmartClient.Common.pdb

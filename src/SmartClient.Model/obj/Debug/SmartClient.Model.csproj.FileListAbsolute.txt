@@ -1,5 +1,0 @@
-D:\Linux\GitHub\WebPrinter\src\SmartClient.Model\bin\Debug\SmartClient.Model.dll
-D:\Linux\GitHub\WebPrinter\src\SmartClient.Model\bin\Debug\SmartClient.Model.pdb
-D:\Linux\GitHub\WebPrinter\src\SmartClient.Model\obj\Debug\SmartClient.Model.csprojResolveAssemblyReference.cache
-D:\Linux\GitHub\WebPrinter\src\SmartClient.Model\obj\Debug\SmartClient.Model.dll
-D:\Linux\GitHub\WebPrinter\src\SmartClient.Model\obj\Debug\SmartClient.Model.pdb

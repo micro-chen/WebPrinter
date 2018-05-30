@@ -1,6 +1,0 @@
-D:\Linux\GitHub\WebPrinter\src\WebAppForTestCors\bin\WebAppForTestCors.dll.config
-D:\Linux\GitHub\WebPrinter\src\WebAppForTestCors\bin\WebAppForTestCors.dll
-D:\Linux\GitHub\WebPrinter\src\WebAppForTestCors\bin\WebAppForTestCors.pdb
-D:\Linux\GitHub\WebPrinter\src\WebAppForTestCors\obj\Debug\WebAppForTestCors.csprojResolveAssemblyReference.cache
-D:\Linux\GitHub\WebPrinter\src\WebAppForTestCors\obj\Debug\WebAppForTestCors.dll
-D:\Linux\GitHub\WebPrinter\src\WebAppForTestCors\obj\Debug\WebAppForTestCors.pdb

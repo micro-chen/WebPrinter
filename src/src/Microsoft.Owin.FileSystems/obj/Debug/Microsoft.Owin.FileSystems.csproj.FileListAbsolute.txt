@@ -1,4 +1,0 @@
-D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.FileSystems\bin\Debug\Microsoft.Owin.FileSystems.dll
-D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.FileSystems\bin\Debug\Microsoft.Owin.FileSystems.pdb
-D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.FileSystems\obj\Debug\Microsoft.Owin.FileSystems.dll
-D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.FileSystems\obj\Debug\Microsoft.Owin.FileSystems.pdb

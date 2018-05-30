@@ -1,3 +1,0 @@
-D:\Linux\GitHub\WebPrinter\src\SmartClientServerHost\obj\x86\Debug\SmartClient.ServerHost.csprojResolveAssemblyReference.cache
-D:\Linux\GitHub\WebPrinter\src\SmartClientServerHost\obj\x86\Debug\SmartClient.ServerHost.Properties.Resources.resources
-D:\Linux\GitHub\WebPrinter\src\SmartClientServerHost\obj\x86\Debug\SmartClient.ServerHost.csproj.GenerateResource.Cache

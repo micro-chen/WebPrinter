@@ -1,5 +1,0 @@
-D:\Linux\GitHub\WebPrinter\src\src\Microsoft.AspNet.SignalR.Client.JS\bin\Microsoft.AspNet.SignalR.Client.JS.dll.config
-D:\Linux\GitHub\WebPrinter\src\src\Microsoft.AspNet.SignalR.Client.JS\bin\Microsoft.AspNet.SignalR.Client.JS.dll
-D:\Linux\GitHub\WebPrinter\src\src\Microsoft.AspNet.SignalR.Client.JS\bin\Microsoft.AspNet.SignalR.Client.JS.pdb
-D:\Linux\GitHub\WebPrinter\src\src\Microsoft.AspNet.SignalR.Client.JS\obj\Debug\Microsoft.AspNet.SignalR.Client.JS.dll
-D:\Linux\GitHub\WebPrinter\src\src\Microsoft.AspNet.SignalR.Client.JS\obj\Debug\Microsoft.AspNet.SignalR.Client.JS.pdb

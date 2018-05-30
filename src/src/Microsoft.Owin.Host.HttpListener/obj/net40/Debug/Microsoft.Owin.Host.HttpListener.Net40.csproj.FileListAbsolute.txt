@@ -1,6 +1,0 @@
-D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Host.HttpListener\bin\Debug\Microsoft.Owin.Host.HttpListener.dll
-D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Host.HttpListener\bin\Debug\Microsoft.Owin.Host.HttpListener.pdb
-D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Host.HttpListener\obj\net40\Debug\Microsoft.Owin.Host.HttpListener.Resources.resources
-D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Host.HttpListener\obj\net40\Debug\Microsoft.Owin.Host.HttpListener.Net40.csproj.GenerateResource.Cache
-D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Host.HttpListener\obj\net40\Debug\Microsoft.Owin.Host.HttpListener.dll
-D:\Linux\GitHub\WebPrinter\src\src\Microsoft.Owin.Host.HttpListener\obj\net40\Debug\Microsoft.Owin.Host.HttpListener.pdb

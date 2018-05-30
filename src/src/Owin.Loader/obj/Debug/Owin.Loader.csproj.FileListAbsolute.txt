@@ -1,8 +1,0 @@
-D:\Linux\GitHub\WebPrinter\src\src\Owin.Loader\bin\Debug\Owin.Loader.XML
-D:\Linux\GitHub\WebPrinter\src\src\Owin.Loader\bin\Debug\Owin.Loader.dll
-D:\Linux\GitHub\WebPrinter\src\src\Owin.Loader\bin\Debug\Owin.Loader.pdb
-D:\Linux\GitHub\WebPrinter\src\src\Owin.Loader\bin\Debug\Owin.dll
-D:\Linux\GitHub\WebPrinter\src\src\Owin.Loader\obj\Debug\Owin.Loader.LoaderResources.resources
-D:\Linux\GitHub\WebPrinter\src\src\Owin.Loader\obj\Debug\Owin.Loader.csproj.GenerateResource.Cache
-D:\Linux\GitHub\WebPrinter\src\src\Owin.Loader\obj\Debug\Owin.Loader.dll
-D:\Linux\GitHub\WebPrinter\src\src\Owin.Loader\obj\Debug\Owin.Loader.pdb
