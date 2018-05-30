@@ -1,0 +1,47 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+
+namespace SmartClient.Common
+{
+    public static  class GlobalConfig
+    {
+        #region 本地监听端口
+
+       
+        //端口号
+        public const int APP_PORT = 6670;
+        /// <summary>
+        /// 程序基本绑定地址。用来将本地的localhost .127.0.0.1绑定监听
+        /// </summary>
+        public static string BaseBindingAddress = string.Format("http://+:{0}", APP_PORT);//绑定所有IP的6670端口
+        /// <summary>
+        /// 程序内部通信使用基于本地的地址
+        /// </summary>
+        public static string BaseAddress = string.Format("http://127.0.0.1:{0}", APP_PORT);
+
+        #endregion
+
+        #region settings.config
+        /// <summary>
+        /// settings.config 的配置文件路径
+        /// </summary>
+        public static string SettingsConfigFilePath
+        {
+            get
+            {
+                var configFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Configs", "settings.config");
+                if (!File.Exists(configFile))
+                {
+                    throw new Exception("未能找到 configFile 的配置文件！在路径：" + configFile);
+                }
+
+                return configFile;
+            }
+        }
+
+        #endregion
+    }
+}
