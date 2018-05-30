@@ -82,6 +82,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SmartClient.Common\SmartClient.Common.csproj">
+      <Project>{0221092B-6053-47C1-BA69-CCB900FC2815}</Project>
+      <Name>SmartClient.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SmartClient.Model\SmartClient.Model.csproj">
       <Project>{71d47d80-69b9-4005-a742-4e9973a8c796}</Project>
       <Name>SmartClient.Model</Name>
@@ -109,6 +113,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Configs\log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Configs\settings.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

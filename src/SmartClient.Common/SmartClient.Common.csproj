@@ -30,13 +30,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessException.cs" />
     <Compile Include="Compress\LZString.cs" />
+    <Compile Include="ConfigHelper.cs" />
     <Compile Include="Encrypt\DEncrypt.cs" />
     <Compile Include="Encrypt\DESEncrypt.cs" />
     <Compile Include="Encrypt\HashEncode.cs" />
@@ -46,7 +58,9 @@
     <Content Include="Encrypt\加密算法.txt" />
     <Compile Include="Extensions\ProcessUtil.cs" />
     <Compile Include="Extensions\RegistryHelper.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Extensions\SystemAppExtension.cs" />
+    <Compile Include="GlobalConfig.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="NativeMethodsUti.cs" />
     <Compile Include="PrinterExtension\PrinterHelper.cs" />
@@ -58,6 +72,9 @@
       <Project>{71d47d80-69b9-4005-a742-4e9973a8c796}</Project>
       <Name>SmartClient.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

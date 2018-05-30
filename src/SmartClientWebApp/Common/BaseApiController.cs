@@ -58,6 +58,7 @@ public class BaseApiController : ApiController
         }
         catch (BusinessException ex)
         {
+            SmartClient.Common.Logger.Error(ex);
 
             dataContainer.Message = ex.Message;
             dataContainer.Data = 0;
@@ -70,27 +71,6 @@ public class BaseApiController : ApiController
     }
 
 
-    /// <summary>
-    /// Log exception记录异常信息
-    /// </summary>
-    /// <param name="exc">BusinessException</param>
-    protected void LogException(BusinessException exc)
-    {
-        //保存错误信息到logs文件夹
-        SmartClient.Common.Logger.WriteException(exc);
-    }
-
-    protected string ConvertToJsonString(object dataObj)
-    {
-
-        return JsonConvert.SerializeObject(dataObj);
-
-    }
-
-    protected T ConvertToObjectFromJsonString<T>(string jsonStr)
-    {
-        return JsonConvert.DeserializeObject<T>(jsonStr);
-    }
 
 
 

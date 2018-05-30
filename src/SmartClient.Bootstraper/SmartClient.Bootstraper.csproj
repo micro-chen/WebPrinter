@@ -60,7 +60,6 @@
     <Reference Include="UIAutomationTypes" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GlobalConfig.cs" />
     <Compile Include="HideOnStartupApplicationContext.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -83,6 +82,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Configs\settings.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Configs\log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">

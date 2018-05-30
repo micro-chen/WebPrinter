@@ -27,8 +27,18 @@ namespace SmartClient.Web.Controllers
         [HttpGet]
         public override IMessageConteiner KeepAlive()
         {
-            var dataContainer = base.KeepAlive();
+            IMessageConteiner dataContainer = null;
+            try
+            {
+                dataContainer = base.KeepAlive();
+
+            }
+            catch (Exception ex)
+            {
+                SmartClient.Common.Logger.Error(ex);
+            }
             return dataContainer;
+
         }
         /// <summary>
         /// 获取软件版本信息
@@ -37,7 +47,16 @@ namespace SmartClient.Web.Controllers
         [HttpGet]
         public override IMessageConteiner GetVersionInfo()
         {
-            var dataContainer = base.GetVersionInfo();
+            IMessageConteiner dataContainer = null;
+            try
+            {
+                 dataContainer = base.GetVersionInfo();
+            }
+            catch (Exception ex)
+            {
+                SmartClient.Common.Logger.Error(ex);
+            }
+          
             return dataContainer;
 
         }
@@ -49,7 +68,17 @@ namespace SmartClient.Web.Controllers
         [HttpGet]
         public override IMessageConteiner CheckCaiNiaoPrinterStatus()
         {
-            var dataContainer = base.CheckCaiNiaoPrinterStatus();
+
+            IMessageConteiner dataContainer = null;
+            try
+            {
+                dataContainer = base.CheckCaiNiaoPrinterStatus();
+            }
+            catch (Exception ex)
+            {
+                SmartClient.Common.Logger.Error(ex);
+            }
+       
 
             return dataContainer;
 
@@ -77,10 +106,12 @@ namespace SmartClient.Web.Controllers
             }
             catch (BusinessException ex)
             {
+                SmartClient.Common.Logger.Error(ex);
 
                 dataContainer.Message = ex.Message;
-                
                 dataContainer.Data = 0;
+
+               
             }
 
             dataContainer.Data = result;
@@ -110,9 +141,10 @@ namespace SmartClient.Web.Controllers
             }
             catch (BusinessException ex)
             {
+                SmartClient.Common.Logger.Error(ex);
+
 
                 dataContainer.Message = ex.Message;
-                
                 dataContainer.Data = 0;
             }
 
@@ -142,9 +174,9 @@ namespace SmartClient.Web.Controllers
             }
             catch (BusinessException ex)
             {
+                SmartClient.Common.Logger.Error(ex);
 
                 dataContainer.Message = ex.Message;
-                
                 dataContainer.Data = "";
             }
 

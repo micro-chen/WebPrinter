@@ -9,8 +9,7 @@ using System.Timers;
 
 using SmartClient.Web;
 using SmartClient.Model;
-
-
+using SmartClient.Common;
 
 namespace SmartClient.ServerHost
 {
@@ -82,9 +81,9 @@ namespace SmartClient.ServerHost
                 });
 
             }
-            catch
+            catch(Exception ex)
             {
-                throw;
+                Logger.Error(ex);
             }
             finally { }
             Console.ReadLine();
@@ -137,7 +136,7 @@ namespace SmartClient.ServerHost
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-
+                Logger.Error(ex);
             }
 
 

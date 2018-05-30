@@ -266,7 +266,7 @@ namespace SmartClient.Web.ServerHubs
             }
             catch (Exception ex)
             {
-                throw ex;
+                SmartClient.Common.Logger.Error(ex);
             }
             finally
             {
@@ -320,8 +320,12 @@ namespace SmartClient.Web.ServerHubs
                 }
                 catch (Exception ex)
                 {
+                    SmartClient.Common.Logger.Error(ex);
+
                     var msg = new CustomMessage { data = string.Format("未能正确连接到Socket连接对象！套接字连接地址：{0}.错误信息：{2}.", userSocket.Socket.Url, ex.Message) };
                     Clients.Caller.onerror(msg);
+
+                    
                     return;
                 }
             }
@@ -336,9 +340,12 @@ namespace SmartClient.Web.ServerHubs
             }
             catch (Exception ex)
             {
+                SmartClient.Common.Logger.Error(ex);
 
                 var msg = new CustomMessage { data = "未能正确发送消息到指定的Socket连接对象！错误信息：" + ex.ToString() };
                 Clients.Caller.onerror(msg);
+
+              
             }
         }
 

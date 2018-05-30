@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -8,12 +7,11 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Owin.Hosting;
-using Newtonsoft.Json;
 using System.Net.Http;
 using System.Timers;
 using System.Windows.Automation;
-
+using Microsoft.Owin.Hosting;
+using Newtonsoft.Json;
 using SmartClient.Web;
 using SmartClient.Common;
 
@@ -64,6 +62,8 @@ namespace SmartClient.Bootstraper
             var isInAdminGroup = this.IsUserInAdminGroup();
             if (!isInAdminGroup)
             {
+                SmartClient.Common.Logger.Error("您所在的用户组没有管理员权限！请联系本机系统管理员授权！");
+
                 MessageBox.Show("您所在的用户组没有管理员权限！请联系本机系统管理员授权！", "用户权限检测", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 System.Environment.Exit(0);//终止程序进程 及其子进程
                 return;
@@ -112,6 +112,8 @@ namespace SmartClient.Bootstraper
                 catch (Exception ex)
                 {
 
+                    SmartClient.Common.Logger.Error(ex);
+
                     MessageBox.Show(ex.Message, "打开程序授权UAC失败！",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -135,7 +137,9 @@ namespace SmartClient.Bootstraper
             var isRunning = HideOnStartupApplicationContext.IsCurrentAppProcessHasRunning();
             if (isRunning)
             {
-                MessageBox.Show("程序已经正在运行中！不允许运行多个实例！", "程序状态检测", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                SmartClient.Common.Logger.Error("程序已经正在运行中！不允许运行多个实例！");
+
+                //MessageBox.Show("程序已经正在运行中！不允许运行多个实例！", "程序状态检测", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 System.Environment.Exit(0);//终止程序进程 及其子进程
                 return;
             }
@@ -150,7 +154,7 @@ namespace SmartClient.Bootstraper
             catch (Exception ex)
             {
                 //非正常启动 http监听 那么退出 并记录日志
-                Logger.WriteException(ex);
+                Logger.Error(ex);
                 System.Environment.Exit(0);//终止程序进程 及其子进程
             }
          
@@ -214,20 +218,19 @@ namespace SmartClient.Bootstraper
                 if (!string.IsNullOrEmpty(result))
                 {
                     var msg = JsonConvert.DeserializeObject<MessageConteiner<string>>(result);
-                    Debug.WriteLine("the first init request result is:" + msg.Message);
+                   // Debug.WriteLine("the first init request result is:" + msg.Message);
+                    Logger.Info(msg.Message);
                     return;
                 }
 
-                Debug.WriteLine("Sorry,the first init request error!!!!");
-
-
+                //Debug.WriteLine("Sorry,the first init request error!!!!");
 
 
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.ToString());
-
+               // Debug.WriteLine(ex.ToString());
+                Logger.Error(ex);
             }
 
 
